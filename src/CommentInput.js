@@ -9,24 +9,27 @@ class CommentInput extends Component {
         }
     }
 
-    handleUsernameChange(event){
+    handleUsernameChange (event) {
         this.setState({
-            username : event.target.value
+            username: event.target.value
         })
     }
-    handleContentChange(event){
+
+    handleContentChange (event) {
         this.setState({
-            content : event.target.value
+            content: event.target.value
         })
     }
+
     handleSubmit () {
-        if (this.props.onSubmite) {
-            const { username, content } = this.state;
-            this.props.onSubmite({username, content})
+        if (this.props.onSubmit) {
+            this.props.onSubmit({
+                username: this.state.username,
+                content: this.state.content,
+            })
         }
         this.setState({ content: '' })
     }
-
 
     render () {
         return (
@@ -34,19 +37,22 @@ class CommentInput extends Component {
                 <div className='comment-field'>
                     <span className='comment-field-name'>用户名：</span>
                     <div className='comment-field-input'>
-                        <input value={this.state.username}
-                               onChange={this.handleUsernameChange.bind(this)}/>
+                        <input
+                            value={this.state.username}
+                            onChange={this.handleUsernameChange.bind(this)} />
                     </div>
                 </div>
                 <div className='comment-field'>
                     <span className='comment-field-name'>评论内容：</span>
                     <div className='comment-field-input'>
-                        <textarea value={this.state.content}
-                        onChange={this.handleContentChange.bind(this)}/>
+            <textarea
+                value={this.state.content}
+                onChange={this.handleContentChange.bind(this)} />
                     </div>
                 </div>
                 <div className='comment-field-button'>
-                    <button onClick={this.handleSubmit.bind(this)}>
+                    <button
+                        onClick={this.handleSubmit.bind(this)}>
                         发布
                     </button>
                 </div>

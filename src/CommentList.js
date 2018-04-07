@@ -1,21 +1,18 @@
-import React,{Component} from 'react';
-class CommentList extends Component{
-    render(){
-        const comments = [
-            {username:"tony",content : "hello"},
-            {username:"pick",content : "world"},
-            {username:"haha",content : "hhhhhh"}
-        ];
-        return(
-           <div>
-               {comments.map((comment,i) => {
-                   return(
-                       <div key={i}>
-                           {comment.username} : {comment.content};
-                       </div>
-                   )
-               })}
-           </div>
+import React, { Component } from 'react'
+import Comment from './Comment'
+
+class CommentList extends Component {
+    static defaultProps = {
+        comments: []
+    }
+
+    render() {
+        return (
+            <div>
+                {this.props.comments.map((comment, i) =>
+                    <Comment comment={comment} key={i} />
+                )}
+            </div>
         )
     }
 }
