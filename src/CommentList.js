@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Comment from './Comment'
-
+//所有评论
 class CommentList extends Component {
     static defaultProps = {
         comments: []

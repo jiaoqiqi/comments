@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+//输入部分
 class CommentInput extends Component {
     constructor () {
         super()

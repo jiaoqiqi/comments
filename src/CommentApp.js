@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CommentInput from './CommentInput'
 import CommentList from './CommentList'
-
+//所有
 class CommentApp extends Component {
     constructor () {
         super()
